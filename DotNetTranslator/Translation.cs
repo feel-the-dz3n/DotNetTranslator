@@ -16,6 +16,7 @@ namespace DotNetTranslator
     public class Translation
     {
         public string Language = "English";
+		public string LanguageLocal = "English";
         public string Locale = "en-US";
 
         public List<TranslationElement> Elements = new List<TranslationElement>();
@@ -37,12 +38,14 @@ namespace DotNetTranslator
         /// <summary>
         /// Translation info 
         /// </summary>
-        /// <param name="language">Translation Language</param>
-        /// <param name="locale">Language Locale (like 'en-US')</param>
-        public Translation(string language, string locale)
+        /// <param name="language">Translation language (in Default Language)</param>
+        /// <param name="locale">Language locale (like 'en-US')</param>
+		/// <param name="localname">Translated language. Example: Russian = 'Русский'</param>
+        public Translation(string language, string locale, string localname)
         {
             Language = language;
             Locale = locale;
+			LanguageLocal = localname;
         }
         
         /// <summary>
