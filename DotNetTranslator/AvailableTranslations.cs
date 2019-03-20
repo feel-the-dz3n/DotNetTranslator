@@ -102,6 +102,21 @@ namespace DotNetTranslator
         }
 
         /// <summary>
+        /// Gets value of Element in current translation
+        /// </summary>
+        /// <param name="ElementName">Element name</param>
+        /// <param name="AppendFromDefault">If not found in selected translation, search in default</param>
+        public string Get(string ElementName, bool AppendFromDefault)
+        {
+            var current = SelectedTranslation.Get(ElementName);
+
+            if (current == null)
+                return DefaultTranslation.Get(ElementName);
+
+            return current;
+        }
+
+        /// <summary>
         /// Serialize content to XML-text
         /// </summary>
         /// <returns>XML</returns>
