@@ -8,6 +8,16 @@ namespace DotNetTranslator
     [Serializable]
     public class AvailableTranslations
     {
+        public delegate void LanguageChangedHandler(AvailableTranslations TranslationSource);
+        /// <summary>
+        /// Triggers when SELECTED translation changed.
+        /// </summary>
+        public event LanguageChangedHandler SelectedTranslationChanged;
+        /// <summary>
+        /// Triggers when DEFAULT translation changed.
+        /// </summary>
+        public event LanguageChangedHandler DefaultTranslationChanged;
+
         /// <summary>
         /// List of translations
         /// </summary>
@@ -35,7 +45,11 @@ namespace DotNetTranslator
                 else
                     return GetTranslation(SelectedLocale);
             }
-            set => SelectedLocale = value.Locale;
+            set
+            {
+                SelectedLocale = value.Locale;
+                SelectedTranslationChanged?.Invoke(this);
+            }
         }
 
         /// <summary>
@@ -44,7 +58,11 @@ namespace DotNetTranslator
         public Translation DefaultTranslation
         {
             get => GetTranslation(DefaultLocale);
-            set => DefaultLocale = value.Locale;
+            set
+            {
+                DefaultLocale = value.Locale;
+                DefaultTranslationChanged?.Invoke(this);
+            }
         }
 
         /// <summary>
