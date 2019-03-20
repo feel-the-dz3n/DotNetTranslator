@@ -1,4 +1,12 @@
-﻿using System;
+﻿/* 
+   PROJECT:     DotNetTranslator
+   LICENSE:     (See it on GitHub page)
+   FILE:        Translation.cs
+   DESCRIPTION: Provides access to translation
+   PROGRAMMERS: Yaroslav Kibysh (2018 - 2019)
+   GITHUB:      https://github.com/feel-the-dz3n/DotNetTranslator
+*/
+using System;
 using System.Collections.Generic;
 
 namespace DotNetTranslator
