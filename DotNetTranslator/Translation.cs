@@ -7,7 +7,6 @@
    GITHUB:      https://github.com/feel-the-dz3n/DotNetTranslator
 */
 using System;
-using System;
 using System.Collections.Generic;
 
 namespace DotNetTranslator
