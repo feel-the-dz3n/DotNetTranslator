@@ -7,6 +7,7 @@
    GITHUB:      https://github.com/feel-the-dz3n/DotNetTranslator
 */
 using System;
+using System;
 using System.Collections.Generic;
 
 namespace DotNetTranslator
@@ -18,6 +19,20 @@ namespace DotNetTranslator
         public string Locale = "en-US";
 
         public List<TranslationElement> Elements = new List<TranslationElement>();
+
+        /// <summary>
+        /// Gets value of element
+        /// </summary>
+        /// <param name="ElementName">Translation Element Name</param>
+        /// <returns></returns>
+        public string Get(string ElementName)
+        {
+            for (int i = 0; i < Elements.Count; i++)
+                if (Elements[i].Name == ElementName)
+                    return Elements[i].Value;
+
+            return null;
+        }
 
         /// <summary>
         /// Translation info 
