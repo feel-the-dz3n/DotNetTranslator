@@ -15,8 +15,22 @@ namespace DotNetTranslator
     public class Translation
     {
         public string Language = "English";
-		public string LanguageLocal = "English";
         public string Locale = "en-US";
+		
+		public string LocalName
+		{
+			get => Get(Language);
+			set 
+			{ 
+				var g = GetElement(Language);
+				
+				if(g != null)
+					Elements.Remove(g);
+				
+				if(value != null)
+					Elements.Add(new TranslationElement(Language, value));
+			}
+		}
 
         public List<TranslationElement> Elements = new List<TranslationElement>();
 
@@ -33,6 +47,20 @@ namespace DotNetTranslator
 
             return null;
         }
+		
+		/// <summary>
+        /// Gets element by name
+        /// </summary>
+        /// <param name="ElementName">Translation Element Name</param>
+        /// <returns></returns>
+        public TranslationElement GetElement(string ElementName)
+        {
+            for (int i = 0; i < Elements.Count; i++)
+                if (Elements[i].Name == ElementName)
+                    return Elements[i];
+
+            return null;
+        }
 
         /// <summary>
         /// Translation info 
@@ -40,11 +68,11 @@ namespace DotNetTranslator
         /// <param name="language">Translation language (in Default Language)</param>
         /// <param name="locale">Language locale (like 'en-US')</param>
 		/// <param name="localname">Translated language. Example: Russian = 'Русский'</param>
-        public Translation(string language, string locale, string localname)
+        public Translation(string language, string locale, string localname = null)
         {
             Language = language;
             Locale = locale;
-			LanguageLocal = localname;
+			LocalName = localname;
         }
         
         /// <summary>
@@ -53,10 +81,11 @@ namespace DotNetTranslator
         /// <param name="language"></param>
         /// <param name="locale"></param>
         /// <param name="dictionary"></param>
-        public Translation(string language, string locale, Dictionary<string, string> dictionary)
+        public Translation(string language, string locale, Dictionary<string, string> dictionary, string localname = null)
         {
             Language = language;
             Locale = locale;
+			LocalName = localname;
 
             AddRange(dictionary);
         }
