@@ -106,7 +106,7 @@ namespace DotNetTranslator
         /// </summary>
         /// <param name="ElementName">Element name</param>
         /// <param name="AppendFromDefault">If not found in selected translation, search in default</param>
-        public string Get(string ElementName, bool AppendFromDefault)
+        public string Get(string ElementName, bool AppendFromDefault = true)
         {
             var current = SelectedTranslation.Get(ElementName);
 
