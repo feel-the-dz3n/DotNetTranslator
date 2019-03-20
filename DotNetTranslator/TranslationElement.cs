@@ -33,5 +33,8 @@ namespace DotNetTranslator
         /// Emptry contructor for deserializer. DO NOT USE IT.
         /// </summary>
         public TranslationElement() { }
+
+        public override string ToString()
+            => Value;
     }
 }
