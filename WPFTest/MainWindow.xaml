@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPFTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="327" Width="544">
+    <Grid>
+        <GroupBox x:Name="TB_GROUP_BOX_MAIN" Header="TB_GROUP_BOX_MAIN">
+            <ScrollViewer>
+                <StackPanel>
+                    <TextBlock><Run x:Name="TB_INSIDE_STACK_PANEL">TB_INSIDE_STACK_PANEL</Run></TextBlock>
+                    <local:UserControl1/>
+                    <ListBox>
+                        <ListBoxItem x:Name="LB_ITEM_1">LB_ITEM_1</ListBoxItem>
+                        <ListBoxItem x:Name="LB_ITEM_2">LB_ITEM_2</ListBoxItem>
+                        <ListBoxItem x:Name="LB_ITEM_3">LB_ITEM_3</ListBoxItem>
+                    </ListBox>
+                    <WrapPanel>
+                        <Button x:Name="BTN_ENGLISH" Click="BtnEnglish_Click">BTN_ENGLISH</Button>
+                        <Button x:Name="BTN_RUSSIAN" Click="BtnRussian_Click" Margin="8,0,0,0">BTN_RUSSIAN</Button>
+                    </WrapPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </GroupBox>
+    </Grid>
+</Window>
