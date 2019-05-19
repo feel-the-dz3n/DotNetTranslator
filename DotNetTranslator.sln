@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsTest", "WinFormsTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTest", "WPFTest\WPFTest.csproj", "{83708DDC-A97C-4A3D-8DFC-8DD1AB047E2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationToCode", "TranslationToCode\TranslationToCode.csproj", "{4E3EF4F0-C69F-42E0-B3EC-5743D07A4026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{83708DDC-A97C-4A3D-8DFC-8DD1AB047E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83708DDC-A97C-4A3D-8DFC-8DD1AB047E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83708DDC-A97C-4A3D-8DFC-8DD1AB047E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E3EF4F0-C69F-42E0-B3EC-5743D07A4026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3EF4F0-C69F-42E0-B3EC-5743D07A4026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3EF4F0-C69F-42E0-B3EC-5743D07A4026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3EF4F0-C69F-42E0-B3EC-5743D07A4026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
