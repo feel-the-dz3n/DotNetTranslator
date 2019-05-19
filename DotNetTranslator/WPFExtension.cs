@@ -76,12 +76,22 @@ namespace DotNetTranslator
             }
 
             var namep = element.GetType().GetProperty("Name");
+
             if (namep != null)
             {
                 var name = namep.GetValue(element, null) as string;
 
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    namep = element.GetType().GetProperty("Tag");
+                    if (namep != null)
+                        name = namep.GetValue(element, null) as string;
+                }
+
                 if (!string.IsNullOrWhiteSpace(name))
                 {
+                    name = name.Trim(new char[] { '_' });
+
                     var t = translation.Get(name);
 
                     if (t != null)
