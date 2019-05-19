@@ -26,7 +26,7 @@ namespace TranslationToCode
 
         private void BtnLanguages_Click(object sender, RoutedEventArgs e)
         {
-
+            new DataGridLanguagesList(dataGrid).ShowDialog();
         }
 
         private void BtnCodeViewer_Click(object sender, RoutedEventArgs e)
@@ -46,7 +46,12 @@ namespace TranslationToCode
 
         private void BtnNew_Click(object sender, RoutedEventArgs e)
         {
+            var columns = dataGrid.Columns.Where(x => x.Header.GetType().Name != typeof(string).Name);
 
+            foreach (var column in columns)
+                dataGrid.Columns.Remove(column);
+
+            dataGrid.Items.Clear();
         }
     }
 }

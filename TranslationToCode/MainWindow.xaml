@@ -9,21 +9,21 @@
     <Grid>
         <Grid VerticalAlignment="Top" Height="30" Background="#0C000000">
             <StackPanel Orientation="Horizontal" Margin="7.5,0,7.5,0">
-                <Button x:Name="btnNew" IsEnabled="False" Click="BtnNew_Click" Width="65" VerticalAlignment="Center" Margin="2.5,0,2.5,0">New</Button>
-                <Button x:Name="btnOpen" IsEnabled="False" Click="BtnOpen_Click"  Width="65" VerticalAlignment="Center" Margin="2.5,0,2.5,0">Open</Button>
-                <Button x:Name="btnSave" IsEnabled="False" Click="BtnSave_Click" Width="65" VerticalAlignment="Center" Margin="2.5,0,2.5,0">Save</Button>
-                <Button x:Name="btnCodeViewer" IsEnabled="False" Click="BtnCodeViewer_Click" Width="65" VerticalAlignment="Center" Margin="2.5,0,2.5,0">To Code</Button>
+                <Button x:Name="btnNew" Click="BtnNew_Click" Width="65" VerticalAlignment="Center" Margin="2.5,0,2.5,0">New</Button>
+                <Button x:Name="btnOpen" Click="BtnOpen_Click"  Width="65" VerticalAlignment="Center" Margin="2.5,0,2.5,0">Open</Button>
+                <Button x:Name="btnSave" Click="BtnSave_Click" Width="65" VerticalAlignment="Center" Margin="2.5,0,2.5,0">Save</Button>
+                <Button x:Name="btnCodeViewer" Click="BtnCodeViewer_Click" Width="65" VerticalAlignment="Center" Margin="2.5,0,2.5,0">To Code</Button>
             </StackPanel>
         </Grid>
         
         <Grid Margin="10,35,10,10">
-            <DataGrid IsEnabled="False" AutoGenerateColumns="True" CanUserAddRows="True" CanUserDeleteRows="True" CanUserReorderColumns="True">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" CanUserAddRows="True" CanUserDeleteRows="True" CanUserReorderColumns="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Element Name"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Height="25">
-                <Button x:Name="btnLanguages" IsEnabled="False" Click="BtnLanguages_Click" Width="75">Languages</Button>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Height="23" Margin="1">
+                <Button x:Name="btnLanguages" Click="BtnLanguages_Click" Width="75">Languages</Button>
             </StackPanel>
         </Grid>
 
